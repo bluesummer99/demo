@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<script th:include="common :: common-header" th:remove="tag"></script>
+	<title>运营管理系统登录页面</title>
+ <script>
+	
+
+	function ready(){
+		refreshCaptcha();
+	    if(top.location!=self.location)
+	    {
+	        top.location=self.location;
+	    }
+	    if($("#name").val()==""){
+			$("#name").focus();
+		}
+		else if($("#password").val()==""){
+			$("#password").focus();
+		}
+		else if($("#captcha").val()==""){
+			$("#captcha").focus();
+		}
+	};
+	function submitForm(){
+		if($("#name").val()==""){
+			$("#name").focus(function(){
+				$("#msg").html("用户名不能为空!");
+			})
+		}
+		else if($("#password").val()==""){
+			$("#msg").html("密码不能为空!");
+		}
+		else if($("#captcha").val()==""){
+			$("#msg").html("请输入验证码!");
+		}
+		else{
+		var data=$('#ff').serialize();
+		$.ajax({
+			type : "POST",
+			url : ctx+"login/action",
+			data : data,
+			success : function(r){
+			if (r.status=="success"){				
+					window.location.href=ctx+"main";
+				}
+				else
+					$('#msg').html(r.message);
+			}
+		})
+		}
+	};
+	function clearForm(){
+		$('#ff').form('clear');
+	};
+	
+	function refreshCaptcha(){//获取验证码
+		var ran = Math.floor(Math.random() * 100)
+		$('#checkCode').attr('src',ctx+'kaptcha/doGet?' + ran);
+		$('#msg').html("");
+	};
+		
+	function clearmsg(){//清除msg
+		$('#msg').html("");
+	}
+	//回车事件
+	function enterPress(e){ //传入 event
+		var e = e||window.event;
+		 if(e.keyCode == 13){
+			 submitForm();
+		 }  
+	}
+</script>
+<style>
+	html,body{
+		height: 100%;
+	}
+</style>
+
+</head>
+<body onload="ready()">
+	<div class="page-login">
+		<div class="login-wrap">
+			<h1>中国铁路客运延伸服务运营管理系统</h1>
+				<div class="login-box">
+					<form id="ff" method="post">
+					<div class="login-bd">
+						<div class="item">
+							<span class="label user"></span>
+							<input type="text" class="inp inp-txt" onkeypress="enterPress(event)" onclick="clearmsg()" name="name" id="name" placeholder="用户名" />
+						</div>
+						<div class="item">
+							<span class="label pwd"></span>
+							<input type="password" class="inp inp-txt" onkeypress="enterPress(event)" onclick="clearmsg()" name="password" id="password" placeholder="密码" />
+						</div>
+						<div class="item">
+							<input type="text" class="inp inp-code" onkeypress="enterPress(event)" id="captcha" name="captcha" />
+							<img id="checkCode" onclick="refreshCaptcha()" width="105" height="32"/>
+						</div>
+						<div class="item-tips" id="msg"></div>
+						<div class="item-btn">
+							<a href="javascript:void(0)" onclick="submitForm()" title="登录" class="btn">登录</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

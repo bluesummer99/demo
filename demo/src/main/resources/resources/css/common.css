@@ -1,0 +1,349 @@
+#north a:link {
+	text-decoration: none;
+	color:white;
+}
+
+#north a:visited {
+	text-decoration: none;
+	color:white;
+}
+
+#north a:hover {
+	text-decoration: none;
+	color:white;
+}
+
+#north a:active {
+	text-decoration: none;
+	color:white;
+}
+
+.userInfo{
+	margin-top: 30px;
+	margin-left:660px;
+	float: left;
+}
+
+.fdtu img:hover {
+	transition: All 0.4s ease-in-out;
+	-webkit-transition: All 0.4s ease-in-out;
+	-moz-transition: All 0.4s ease-in-out;
+	-o-transition: All 0.4s ease-in-out;
+}
+
+.fdtu img:hover {
+	transform: rotate(0deg) scale(1.5);
+	-webkit-transform: rotate(0deg) scale(1.5);
+	-moz-transform: rotate(0deg) scale(1.5);
+	-o-transform: rotate(0deg) scale(1.5);
+	-ms-transform: rotate(0deg) scale(1.5);
+	z-index: 9999;
+	border: solid 3px #696;
+	float: left;
+	/*  opacity:0.9;
+          filter:alpha(opacity=90);//用天IE8 and earlier */
+}
+
+#css3menu {
+	padding: 0px;
+	margin: 0px;
+	list-type: none;
+	float: left;
+	margin-left: 40px;
+}
+
+#css3menu li {
+	float: left;
+	list-style-type: none;
+}
+
+#css3menu li a {
+	color: #fff;
+	padding-right: 20px;
+	
+}
+
+#css3menu li a.active {
+	color: yellow;
+}
+
+#north {
+	float: right;
+	overflow: hidden;
+	z-index: 999;
+	float: right;
+	height: 60px;
+	background: url(../images/login/topback.jpg) #7f99be repeat-x center 50%;
+	line-height: 20px;
+	color: #fff;
+	font-family: Verdana, 微软雅黑, 黑体;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.barfont{
+	background:url(../images/login/topbar.jpg)  no-repeat center 50%; 
+	margin-left:auto;
+	margin-right:auto;
+	z-index:9999;
+	width:1003px;;
+	height:50px;
+	padding-top:5px;
+}
+.systemInfo{
+	
+}
+
+#north span {
+	float: right;
+	padding-right: 20px;
+}
+
+#north span a #{
+	color: White;
+	text-decoration: none;
+}
+
+#south {
+	height: 30px;
+	z-index: 998;
+	color:white;
+	text-align:center;
+	background-color:#1573b0;
+}
+
+#west {
+	width: 150px;
+	z-index: -1;
+	float: right;
+}
+
+#center {
+	background: #eee;
+	overflow-y: hidden;
+	z-index: -200;
+}
+
+#center .wel {
+	padding-top: 0px;
+	overflow: hidden;
+}
+
+#center .welImg {
+	width: 640px;
+	height: 480px;
+	margin-left: auto;
+	margin-right: auto;
+	background: url(../images/welcome.png)  repeat-x center 50%;
+}
+
+#messageDiv {
+	display: none;
+	color:red;
+}
+
+#messageDiv a {
+	color: red;
+	z-index: 999;
+	display: block;
+}
+
+#messageDiv a:link {
+	text-decoration: none;
+	color:red;
+}
+
+#messageDiv a:visited {
+	text-decoration: none;
+	color:red;
+}
+
+#messageDiv a:hover {
+	text-decoration: none;
+	color:red;
+}
+
+#messageDiv a:active {
+	text-decoration: none;
+	color:red;
+}
+
+#messageDiv .mail{
+	position:relative;
+	/* background: url(../images/message/mail7.gif)  no-repeat center 50%; */
+/* 	background: url(../images/message/sx.gif)  no-repeat center 50%; */
+	width:40px;
+	height: 30px;
+	margin-left:auto;
+	margin-right:554px;
+	margin-top: 6px;
+}
+
+
+
+#messageDiv .yuan{
+	/* background: url(../images/message/yuan.png)  no-repeat center 50%;  */
+	width: 20px;
+	height: 16px;
+	padding-bottom: 2px
+}
+
+#messageDiv .num {
+	font-size:15pt;
+	padding-bottom: 5px;
+	line-height: 24px;
+}
+
+div.getMessage {
+	padding: 5px;
+	/* margin-top:60px; */
+	border-top: 0px;
+	border: solid 1px gray;
+	/* 	border: solid 1px #c3c3c3; */
+	border-top: 0px;
+	margin-right: 10px;
+	margin-left: auto;
+	font-size: 10pt;
+	float: right;
+	text-align: center;
+	height: auto;
+	background-color: #FCFCFC;
+	width: 210px;
+	position: relative;
+	z-index: 100;
+	display: none;
+}
+
+#cot img {
+	height: auto;
+	width: auto;
+}
+
+#tb {
+	width: 200px;
+	font-size: 9px;
+	height: 10px;
+	text-align: left;
+	border-spacing: 0px;
+}
+
+#tb tr {
+	width: 100%;
+	height: 30px;
+	text-align: left;
+	/* border-bottom: solid; 1px #c3c3c3; */
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+#tb tbody tr :HOVER {
+	background-color: #FFFF93;
+	text-decoration: none;
+	color: black;
+}
+
+#tb tr td {
+	text-align: left;
+	vertical-align: middle;
+	border-bottom: dashed 1px #c3c3c3;
+	overflow: hidden;
+	color: blue;
+}
+
+#tb tr td a :HOVER {
+	color: #707070
+}
+
+#tb img {
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.attrVal {
+	font-size: 16px;
+	color: #F00;
+	line-height: 50px;
+	height: 55px;
+	width: 800px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: #FF9;
+	box-shadow: 0px 5px 5px #333;
+	margin-bottom: 10px;
+	clear: none;
+	float: none;
+	position: static;
+}
+
+
+/* mesaage 相关css */
+#cot{
+	border:solid 1px #c3c3c3;
+	 background-color:#FFFFDB;
+	  color: #666464;
+	   padding: 5px; 
+	   overflow: auto;
+	   height: 160px;
+	   width:200px;
+	   margin-top:2px;
+	   display:none;
+	   text-align: left;
+}
+#graystar{
+	color:gray;line-height: 10px;padding-left: 5px;
+}
+
+#redstar{
+	color:red;line-height: 10px;padding-left: 5px;
+	
+}
+#messageCreadDate{
+	width:60px;height:10px;font-size: 10px;color: silver;padding-left: 10px;
+}
+
+#delImg{
+	width:10px;height:10px;padding-left: 10px;
+}
+.addtable{
+	margin-left: auto;
+	margin-top:20px;
+	margin-bottom:auto;
+	margin-right:auto;
+	width: 100%;
+	height:100%
+	text-align: center;
+}
+
+.addtable td{
+	padding:5px;
+	text-align: left;
+}
+
+
+
+
+/* 效果一：360°旋转 修改rotate(旋转度数)
+
+* { transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;}*:hover {    transform:rotate(360deg);    -webkit-transform:rotate(360deg);    -moz-transform:rotate(360deg);    -o-transform:rotate(360deg);    -ms-transform:rotate(360deg);}
+
+效果二：放大 修改scale(放大的值)
+
+* {    transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;}*:hover {    transform:scale(1.2);    -webkit-transform:scale(1.2);    -moz-transform:scale(1.2);    -o-transform:scale(1.2);    -ms-transform:scale(1.2);}
+
+效果三：旋转放大 修改rotate(旋转度数) scale(放大值)
+
+* {    transition:All 0.4s ease-in-out;    -webkit-transition:All 0.4s ease-in-out;    -moz-transition:All 0.4s ease-in-out;    -o-transition:All 0.4s ease-in-out;}*:hover {    transform:rotate(360deg) scale(1.2);    -webkit-transform:rotate(360deg) scale(1.2);    -moz-transform:rotate(360deg) scale(1.2);    -o-transform:rotate(360deg) scale(1.2);    -ms-transform:rotate(360deg) scale(1.2);}
+
+效果四：上下左右移动 修改translate(x轴,y轴)
+
+* {    transition:All 0.4s ease-in-out; 
+   -webkit-transition:All 0.4s ease-in-out; 
+      -moz-transition:All 0.4s ease-in-out; 
+         -o-transition:All 0.4s ease-in-out;}
+         *:hover {    transform:translate(0,-10px);
+             -webkit-transform:translate(0,-10px); 
+                -moz-transform:translate(0,-10px); 
+                   -o-transform:translate(0,-10px); 
+                      -ms-transform:translate(0,-10px);}
+ */

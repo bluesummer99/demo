@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common-header">
+<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css"
+		href="/js/lib/jquery-easyui-1.4.4/themes/bootstrap/easyui.css"
+		th:href="${#httpServletRequest.contextPath+'/js/lib/jquery-easyui-1.4.4/themes/bootstrap/easyui.css'}"></link>
+	<link rel="stylesheet" type="text/css" href="/js/lib/jquery-easyui-1.4.4/themes/icon.css"
+		th:href="${#httpServletRequest.contextPath+'/js/lib/jquery-easyui-1.4.4/themes/icon.css'}"></link>
+	<link rel="stylesheet" type="text/css" href="/js/lib/jquery-easyui-1.4.4/themes/color.css"
+		th:href="${#httpServletRequest.contextPath+'/js/lib/jquery-easyui-1.4.4/themes/color.css'}"></link>
+   <link  rel="stylesheet" type="text/css"  
+   		th:href="${#httpServletRequest.contextPath+'/css/common.css'}"></link>
+   <link  rel="stylesheet" type="text/css"  
+   		th:href="${#httpServletRequest.contextPath+'/css/style.css'}"></link>
+	<script type="text/javascript" src="/js/lib/jquery-easyui-1.4.4/jquery.min.js"
+		th:src="${#httpServletRequest.contextPath+'/js/lib/jquery-easyui-1.4.4/jquery.min.js'}"></script>
+	<script type="text/javascript" src="/js/lib/jquery-easyui-1.4.4/jquery.easyui.min.js"
+		th:src="${#httpServletRequest.contextPath+'/js/lib/jquery-easyui-1.4.4/jquery.easyui.min.js'}"></script>
+		
+	<script type="text/javascript" 
+		th:src="${#httpServletRequest.contextPath+'/js/lib/layer-v2.4/layer/layer.js'}" ></script>
+	<script type="text/javascript" 
+		th:src="${#httpServletRequest.contextPath+'/js/lib/laytpl-v1.1/laytpl/laytpl.js'}" ></script>
+	<script type="text/javascript" 
+		th:src="${#httpServletRequest.contextPath+'/js/lib/MyPage.js'}" ></script>
+	<script type="text/javascript" 
+		th:src="${#httpServletRequest.contextPath+'/js/lib/validate.js'}" ></script>
+  
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		 var ctx=/*[[${#httpServletRequest.contextPath== "" ? "":#httpServletRequest.contextPath+'/'}]]*/"";
+		 /*]]>*/
+	</script>
+	<script type="text/javascript" 
+		th:src="${#httpServletRequest.contextPath+'/js/common.js'}" ></script>
+</head>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<script th:include="common :: common-header" th:remove="tag"></script>
+<script type="text/javascript" th:src="${#httpServletRequest.contextPath+'/js/security/resource.js'}"></script>
+
+</head>
+<body>
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'west',collapsible:true,title: '资源树',split:true" style="width: 180px">
+			 <ul id="wtree" class="easyui-tree"></ul>  
+		</div>
+		<div data-options="region:'center',collapsible:false,split:true">
+			<table id="table" border="0" fit="true" cellpadding="2" toolbar="#q_form" cellspacing="0" style="padding: 10px 60px 20px 60px; width: 100%"></table>
+		</div>
+	</div>
+	<div class="easyui-panel" title="查询条件" style="width: 100%;">
+		<div class="queryDiv" style="width: 100%">
+			<form id="q_form" method="post">
+				<table>
+					<tr>
+						<input type="text" id="q_parentId" name="q_parentId" hidden="hidden"></input>
+						
+						<td>名称: <input class="easyui-textbox" type="text" id="q_resourceName" name="q_resourceName" style="width: 100px;"></input>
+						</td>
+						<td>
+							<div style="text-align: center; padding: 5px">
+								<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" id="queryBtn">查询</a> <a href="javascript:void(0)" class="easyui-linkbutton"
+									iconCls="icon-clear" onclick="javascript:$('#q_form').form('clear')">重置</a> <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" id="addBtn">新增</a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div id="dlg" class="easyui-dialog" closed="true" style="padding: 10px; width: 350px; height: 400px"
+		data-options="
+				iconCls: 'icon-save',
+				buttons: [{
+					text:'保存',
+					iconCls:'icon-save',
+					handler:function(){
+						doSave();
+					}
+				},{
+					text:'取消',
+					iconCls:'icon-cancel',
+					handler:function(){
+						$('#dlg').dialog('close');
+					}
+				}]
+			">
+		<!-- content begin -->
+		<form id="fm" method="post">
+			<table class="addtable">
+				<tr>
+					<td style="text-align: right;">名称:</td>
+					<td><input class="easyui-textbox" style="width:180px;" id="caption" name="caption" data-options="required:true,validType:['notNull']" missingMessage="该信息不能为空"></input></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">类型:</td>
+					<td><input class="easyui-textbox" style="width:180px;" id="resourceType" name="resourceType" data-options="required:true,validType:['notNull']" missingMessage="该信息不能为空"></input></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">url:</td>
+					<td><input class="easyui-textbox" style="width:180px;" id="linkurl" name="linkurl" ></input></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">所属资源:</td>
+					<td><input class="easyui-combotree"  style="width:180px;"   id="parentId" name="parentId" 
+						></input></td>
+				</tr>
+				<input type="hidden" name="id" id="id"></input>
+			</table>
+		</form>
+
+	</div>
+
+</body>
+</html>

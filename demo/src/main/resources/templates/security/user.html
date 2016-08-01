@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<script th:include="common :: common-header" th:remove="tag"></script>
+<script type="text/javascript" th:src="${#httpServletRequest.contextPath+'/js/security/user.js'}"></script>
+
+</head>
+<body>
+	<div class="easyui-layout" data-options="fit:true">
+		<div data-options="region:'west',collapsible:true,title: '部门树',split:true" style="width: 180px">
+			<ul id="wtree" class="easyui-tree"></ul>
+		</div>
+		<div data-options="region:'center',collapsible:false,split:true">
+			<table id="table" border="0" fit="true" cellpadding="2" toolbar="#q_form" cellspacing="0" style="padding: 10px 60px 20px 60px; width: 100%"></table>
+		</div>
+	</div>
+
+	<form id="q_form" method="post">
+		<table>
+			<tr>
+				<input id="q_organizationId" name="q_organizationId" hidden="hidden"></input>
+				<td>登录名称: <input class="easyui-textbox" type="text" id="q_loginName" name="q_loginName" style="width: 100px;"></input>
+				</td>
+				<td>用户名称: <input class="easyui-textbox" type="text" id="q_userName" name="q_userName" style="width: 100px;"></input>
+				</td>
+				<td>
+					<div style="text-align: center; padding: 5px">
+						<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" id="queryBtn">查询</a> <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-clear"
+							onclick="javascript:$('#q_form').form('clear')">重置</a> <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" id="addBtn">新增</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
+
+	<div id="dlg" class="easyui-dialog" closed="true" style="padding: 10px; width: 350px; height: 400px"
+		data-options="
+				iconCls: 'icon-save',
+				buttons: [{
+					text:'保存',
+					iconCls:'icon-save',
+					handler:function(){
+						doSave();
+					}
+				},{
+					text:'取消',
+					iconCls:'icon-cancel',
+					handler:function(){
+						$('#dlg').dialog('close');
+					}
+				}]
+			">
+		<!-- content begin -->
+		<form id="fm" method="post">
+			<table class="addtable">
+				<tr>
+					<td style="text-align: right;">登录名:</td>
+					<td><input class="easyui-textbox" style="width: 180px;" id="loginName" name="loginName" data-options="required:true,validType:['loginName[10]','notNull']"
+						missingMessage="该信息不能为空"></input></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">用户名:</td>
+					<td><input class="easyui-textbox" style="width: 180px;" id="userName" name="userName" data-options="required:true,validType:['notNull']" missingMessage="该信息不能为空"></input></td>
+				</tr>
+				<tr>
+					<td style="text-align: right;">所属机构:</td>
+					<td><input class="easyui-combotree" style="width: 180px;" id="organizationId" name="organizationId" data-options="required:true,validType:['notNull']"
+						missingMessage="该信息不能为空"></input></td>
+				</tr>
+				<input type="hidden" name="id" id="id"></input>
+			</table>
+		</form>
+
+	</div>
+
+	<div id="dlg-role" class="easyui-dialog" closed="true" style="width: 500px; height: 400px"
+		data-options="
+				modal:true,
+				iconCls: 'icon-save',
+				buttons: [{
+					text:'保存',
+					iconCls:'icon-save',
+					handler:function(){
+						doSaveRole();
+					}
+				},{
+					text:'取消',
+					iconCls:'icon-cancel',
+					handler:function(){
+						$('#dlg-role').dialog('close');
+					}
+				}]
+			">
+		<!-- content begin -->
+		<form id="fm-role" method="post">
+			<input type="hidden" name="userId" id="userId"></input> 
+			<input type="hidden" name="rolesId" id="rolesId"></input>
+		</form>
+		<div class="easyui-layout" data-options="fit:true">
+			<div data-options="region:'center',collapsible:false,split:true">
+				<table id="roles" toolbar="#role-toolbar"></table>
+			</div>
+		</div>
+
+	</div>
+	<div id="role-toolbar">
+		<span>部门:</span>
+		<input class="easyui-combotree" id="organization-tree" ></input>
+		<span>角色:</span>
+		<input class="easyui-combotree" id="role-tree" ></input>
+		 <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" onclick="addRole()"
+			id="addRoleBtn">新增</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" onclick="deleteRole()" id="removeRoleBtn">删除</a>
+	</div>
+	
+	<div id="info-content">
+		<div  style="float: left;width: 50%">
+			<span>权限信息:</span>
+			<ul class="easyui-tree" id="user-resource" ></ul>
+		</div>
+		<div  style="float: right;width: 50%">
+			<span>数据范围:</span>
+			<ul class="easyui-tree" id="user-organization" ></ul>
+		</div>
+	</div>
+
+</body>
+</html>
