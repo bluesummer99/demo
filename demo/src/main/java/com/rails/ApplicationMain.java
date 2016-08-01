@@ -3,7 +3,7 @@ package com.rails;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//test
+
 @SpringBootApplication // same as @Configuration @EnableAutoConfiguration @ComponentScan
 public class ApplicationMain {
 
